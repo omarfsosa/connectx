@@ -10,7 +10,7 @@ def _iter_diagonals(matrix, num_connect):
     num_rows, num_cols = matrix.shape
     for row in range(num_rows - num_connect + 1):
         for offset in range(num_cols - num_connect + 1):
-            diag = np.diagonal(matrix[row: row + 4], offset=offset)
+            diag = np.diagonal(matrix[row : row + 4], offset=offset)
             yield diag
 
 
@@ -19,9 +19,7 @@ def diagonals_view(matrix, num_connect):
 
 
 def horizontals_view(matrix, num_connect):
-    view = np.lib.stride_tricks.sliding_window_view(
-        matrix, (1, num_connect)
-    )
+    view = np.lib.stride_tricks.sliding_window_view(matrix, (1, num_connect))
     return view.reshape((-1, num_connect))
 
 

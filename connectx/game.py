@@ -35,6 +35,7 @@ if __name__ == "__main__":
     from connectx.board import Board
     from connectx.player import RandomPlayer
     from connectx.evaluator import Evaluator
+
     bd = Board(6, 7)
     p1 = RandomPlayer(1, "X")
     p2 = RandomPlayer(2, "O")
